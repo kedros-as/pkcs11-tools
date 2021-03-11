@@ -63,6 +63,7 @@ bool pkcs11_ex_curvename2oid(char *name, CK_BYTE **where, CK_ULONG *len, key_typ
 #define ANSI_X9_62_CURVES "1.2.840.10045.3"
 #define CERTICOM_CURVES   "1.3.132.0"
 #define WAP_WSG_CURVES    "2.23.43.1.4"
+#define BRAINPOOL_P1      "1.3.36.3.3.2.8.1.1"
 
 #define ED25519           "1.3.101.112"
 #define ED448             "1.3.101.113"
@@ -73,6 +74,8 @@ bool pkcs11_ex_curvename2oid(char *name, CK_BYTE **where, CK_ULONG *len, key_typ
 	if( ( keytype == ec && ( strncmp(ANSI_X9_62_CURVES, repr, strlen(ANSI_X9_62_CURVES)) == 0
 				 ||
 				 strncmp(CERTICOM_CURVES, repr, strlen(CERTICOM_CURVES)) == 0
+				 ||
+				 strncmp(BRAINPOOL_P1, repr, strlen(BRAINPOOL_P1)) == 0
 				 ||
 				 strncmp(WAP_WSG_CURVES, repr, strlen(WAP_WSG_CURVES)) == 0 ) )
 	    || ( keytype == ed && ( strncmp(ED25519, repr, strlen(ED25519)) == 0
